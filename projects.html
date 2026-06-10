@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="dark">
+  <meta name="description" content="Selected works — production-grade AI systems, autonomous agent architectures, and analytics engines.">
+  <meta name="view-transition" content="same-origin">
+  <title>Projects — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== Navigation ===== -->
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">Atulya Manikandan</a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="projects.html" class="active" aria-current="page">Projects</a>
+        <a href="blog.html">Blog</a>
+        <a href="captures.html">Captures</a>
+        <a href="deck.html">Deck</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== Main Content ===== -->
+  <main class="page-container">
+
+    <!-- Hero -->
+    <header class="projects-hero fade-in">
+      <p class="projects-overline">Portfolio · Case Studies</p>
+      <h1 class="page-title projects-title">Selected Works</h1>
+      <p class="page-subtitle projects-subtitle">A chronicle of production-grade systems, non-Euclidean reasoning, and autonomous agent architectures.</p>
+      <div class="projects-hero-rule"></div>
+    </header>
+
+    <!-- Case Studies Directory -->
+    <div class="projects-directory">
+
+      <!-- ─── Project 1: AetherOS ─── -->
+      <article class="project-card fade-in" id="project-aetheros">
+        <div class="project-card-header">
+          <div class="project-number">01</div>
+          <div class="project-meta-row">
+            <h2 class="project-name">AetherOS: Agentic Core</h2>
+            <div class="project-tags">
+              <span class="project-tag">Python</span>
+              <span class="project-tag">Groq API</span>
+              <span class="project-tag">PyTorch</span>
+              <span class="project-tag">Next.js</span>
+              <span class="project-tag">Redis</span>
+            </div>
+          </div>
+          <p class="project-subtitle">High-throughput autonomous agent executor leveraging low-latency LLM routing.</p>
+        </div>
+        <div class="project-case-study">
+          <div class="case-study-block">
+            <h3 class="case-study-label">The Problem</h3>
+            <p class="case-study-text">High latency and token overhead in multi-agent sequential reasoning workflows. Each agent hand-off introduced compounding delays, and naive prompt routing saturated context windows well before task completion.</p>
+          </div>
+          <div class="case-study-block">
+            <h3 class="case-study-label">The Solution</h3>
+            <p class="case-study-text">Developed a custom execution graph that optimizes routing based on prompt complexity, running on ultra-fast hardware APIs. The system dynamically selects between lightweight and heavyweight model tiers, batching sub-tasks into parallelizable execution lanes with Redis-backed state persistence.</p>
+          </div>
+          <div class="case-study-block">
+            <h3 class="case-study-label">Key Metrics</h3>
+            <div class="metrics-row">
+              <div class="metric-item">
+                <span class="metric-value">42%</span>
+                <span class="metric-label">reduction in TTFT</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-value">99.4%</span>
+                <span class="metric-label">task completion accuracy</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ─── Project 2: Hyperbolic Manifold Reasoning ─── -->
+      <article class="project-card fade-in" id="project-hyperbolic">
+        <div class="project-card-header">
+          <div class="project-number">02</div>
+          <div class="project-meta-row">
+            <h2 class="project-name">Hyperbolic Manifold Reasoning</h2>
+            <div class="project-tags">
+              <span class="project-tag">Python</span>
+              <span class="project-tag">PyTorch Geometric</span>
+              <span class="project-tag">NetworkX</span>
+              <span class="project-tag">FastAPI</span>
+            </div>
+          </div>
+          <p class="project-subtitle">Embedding complex hierarchical knowledge graphs into Poincaré disk spaces for extreme-accuracy zero-shot reasoning.</p>
+        </div>
+        <div class="project-case-study">
+          <div class="case-study-block">
+            <h3 class="case-study-label">The Problem</h3>
+            <p class="case-study-text">Traditional Euclidean embeddings fail to accurately model deep hierarchical data without severe structural distortion. Tree-structured ontologies collapsed into flat manifolds, destroying parent-child distance semantics and degrading downstream inference quality.</p>
+          </div>
+          <div class="case-study-block">
+            <h3 class="case-study-label">The Solution</h3>
+            <p class="case-study-text">Implemented neural network layers operating directly within hyperbolic space, preserving parent-child distances perfectly. Leveraged the exponential volume growth of the Poincaré disk to encode deep hierarchies in dramatically fewer dimensions with Riemannian SGD optimization.</p>
+          </div>
+          <div class="case-study-block">
+            <h3 class="case-study-label">Key Metrics</h3>
+            <div class="metrics-row">
+              <div class="metric-item">
+                <span class="metric-value">3×</span>
+                <span class="metric-label">dimension reduction</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-value">+18%</span>
+                <span class="metric-label">link prediction AUC</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ─── Project 3: NexusVision ─── -->
+      <article class="project-card fade-in" id="project-nexusvision">
+        <div class="project-card-header">
+          <div class="project-number">03</div>
+          <div class="project-meta-row">
+            <h2 class="project-name">NexusVision: Edge Analytics</h2>
+            <div class="project-tags">
+              <span class="project-tag">C++</span>
+              <span class="project-tag">OpenCV</span>
+              <span class="project-tag">TensorRT</span>
+              <span class="project-tag">MQTT</span>
+              <span class="project-tag">Docker</span>
+            </div>
+          </div>
+          <p class="project-subtitle">Low-power, high-FPS spatial intelligence and multi-object tracking deployed on edge hardware.</p>
+        </div>
+        <div class="project-case-study">
+          <div class="case-study-block">
+            <h3 class="case-study-label">The Problem</h3>
+            <p class="case-study-text">Running dense convolutional networks on resource-constrained hardware caused severe thermal throttling and dropped frames. Standard model serving approaches demanded 4× the available power budget, making real-time inference impossible at the edge.</p>
+          </div>
+          <div class="case-study-block">
+            <h3 class="case-study-label">The Solution</h3>
+            <p class="case-study-text">Layer-pruned and quantized weights to INT8 precision, compiling a custom TensorRT engine for asynchronous execution. Implemented a dual-stream pipeline — one for detection, one for tracking — with MQTT-based telemetry streaming into a Dockerized monitoring stack.</p>
+          </div>
+          <div class="case-study-block">
+            <h3 class="case-study-label">Key Metrics</h3>
+            <div class="metrics-row">
+              <div class="metric-item">
+                <span class="metric-value">60 FPS</span>
+                <span class="metric-label">steady execution</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-value">&lt;7W</span>
+                <span class="metric-label">power consumption</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ─── Project 4: Momentum Analytics Core ─── -->
+      <article class="project-card fade-in" id="project-momentum">
+        <div class="project-card-header">
+          <div class="project-number">04</div>
+          <div class="project-meta-row">
+            <h2 class="project-name">Momentum Analytics Core</h2>
+            <div class="project-tags">
+              <span class="project-tag">Python</span>
+              <span class="project-tag">Pandas</span>
+              <span class="project-tag">Scikit-Learn</span>
+              <span class="project-tag">ClickHouse</span>
+              <span class="project-tag">Apache Kafka</span>
+            </div>
+          </div>
+          <p class="project-subtitle">Time-series forecasting and behavioral cohort analysis engine for predicting user retention.</p>
+        </div>
+        <div class="project-case-study">
+          <div class="case-study-block">
+            <h3 class="case-study-label">The Problem</h3>
+            <p class="case-study-text">Processing millions of concurrent user micro-interactions to flag high-churn risks before they happen. Traditional batch analytics ran on 24-hour cycles, leaving a massive blind spot for rapid behavioral shifts.</p>
+          </div>
+          <div class="case-study-block">
+            <h3 class="case-study-label">The Solution</h3>
+            <p class="case-study-text">Built a real-time event streaming pipeline feeding an ensemble gradient-boosting model for time-series forecasting. Kafka ingests micro-events, ClickHouse stores materialized cohort views, and Scikit-Learn models retrain incrementally on sliding windows.</p>
+          </div>
+          <div class="case-study-block">
+            <h3 class="case-study-label">Key Metrics</h3>
+            <div class="metrics-row">
+              <div class="metric-item">
+                <span class="metric-value">7 days</span>
+                <span class="metric-label">advance churn detection</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-value">89%</span>
+                <span class="metric-label">precision rate</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <p>Made with <span class="heart" aria-label="love">♥</span> in Bengaluru. Built on Antigravity.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

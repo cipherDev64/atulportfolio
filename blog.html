@@ -14,12 +14,13 @@
 </head>
 <body>
 
-  <nav class="site-nav">
+  <nav class="site-nav" aria-label="Main navigation">
     <div class="nav-inner">
       <a href="index.html" class="nav-brand">Atulya Manikandan</a>
       <div class="nav-links">
         <a href="index.html">Home</a>
-        <a href="blog.html" class="active">Blog</a>
+        <a href="projects.html">Projects</a>
+        <a href="blog.html" class="active" aria-current="page">Blog</a>
         <a href="captures.html">Captures</a>
         <a href="deck.html">Deck</a>
       </div>
@@ -27,59 +28,101 @@
   </nav>
 
   <main class="page-container">
-    <div class="blog-index fade-in">
+
+    <!-- ===== Blog Index View ===== -->
+    <div class="blog-index fade-in" id="blog-index-view">
       <h1 class="page-title">Journal</h1>
       <p class="page-subtitle">Thoughts on engineering, design, and building things that matter.</p>
 
-      <a href="#" class="blog-entry">
-        <div class="blog-entry-meta">
-          <span class="blog-date">May 2026</span>
-          <span class="blog-tag">AI</span>
+      <a href="#" class="blog-entry" data-article="agentic-workflows" id="entry-agentic-workflows">
+        <div class="blog-entry-inner">
+          <div class="blog-entry-meta">
+            <span class="blog-date">May 2026</span>
+            <span class="blog-tag">AI</span>
+          </div>
+          <h2 class="blog-title">Why Agentic Workflows Will Replace Traditional Automation</h2>
+          <p class="blog-excerpt">The shift from rule-based pipelines to autonomous reasoning agents is not incremental — it's a phase transition in how software operates.</p>
         </div>
-        <h2 class="blog-title">Why Agentic Workflows Will Replace Traditional Automation</h2>
+        <span class="blog-arrow" aria-hidden="true">→</span>
       </a>
 
-      <a href="#" class="blog-entry">
-        <div class="blog-entry-meta">
-          <span class="blog-date">Apr 2026</span>
-          <span class="blog-tag">Design</span>
+      <a href="#" class="blog-entry" data-article="design-system" id="entry-design-system">
+        <div class="blog-entry-inner">
+          <div class="blog-entry-meta">
+            <span class="blog-date">Apr 2026</span>
+            <span class="blog-tag">Design</span>
+          </div>
+          <h2 class="blog-title">Building a Design System From Scratch</h2>
+          <p class="blog-excerpt">How token-driven CSS architectures create consistency at scale — without the overhead of component libraries.</p>
         </div>
-        <h2 class="blog-title">Building a Design System From Scratch</h2>
+        <span class="blog-arrow" aria-hidden="true">→</span>
       </a>
 
-      <a href="#" class="blog-entry">
-        <div class="blog-entry-meta">
-          <span class="blog-date">Mar 2026</span>
-          <span class="blog-tag">iOS</span>
+      <a href="#" class="blog-entry" data-article="swiftui-uikit" id="entry-swiftui-uikit">
+        <div class="blog-entry-inner">
+          <div class="blog-entry-meta">
+            <span class="blog-date">Mar 2026</span>
+            <span class="blog-tag">iOS</span>
+          </div>
+          <h2 class="blog-title">SwiftUI vs UIKit in 2026: The Verdict</h2>
+          <p class="blog-excerpt">After shipping production apps in both frameworks, here's an honest assessment of where each one wins.</p>
         </div>
-        <h2 class="blog-title">SwiftUI vs UIKit in 2026: The Verdict</h2>
+        <span class="blog-arrow" aria-hidden="true">→</span>
       </a>
 
-      <a href="#" class="blog-entry">
-        <div class="blog-entry-meta">
-          <span class="blog-date">Feb 2026</span>
-          <span class="blog-tag">Engineering</span>
+      <a href="#" class="blog-entry" data-article="minimalism-arch" id="entry-minimalism-arch">
+        <div class="blog-entry-inner">
+          <div class="blog-entry-meta">
+            <span class="blog-date">Feb 2026</span>
+            <span class="blog-tag">Engineering</span>
+          </div>
+          <h2 class="blog-title">On Minimalism in Software Architecture</h2>
+          <p class="blog-excerpt">Complexity is the enemy of reliability. A manifesto for building systems that are as simple as they can be — but no simpler.</p>
         </div>
-        <h2 class="blog-title">On Minimalism in Software Architecture</h2>
+        <span class="blog-arrow" aria-hidden="true">→</span>
       </a>
 
-      <a href="#" class="blog-entry">
-        <div class="blog-entry-meta">
-          <span class="blog-date">Jan 2026</span>
-          <span class="blog-tag">AI</span>
+      <a href="#" class="blog-entry" data-article="local-first-ai" id="entry-local-first-ai">
+        <div class="blog-entry-inner">
+          <div class="blog-entry-meta">
+            <span class="blog-date">Jan 2026</span>
+            <span class="blog-tag">AI</span>
+          </div>
+          <h2 class="blog-title">The Case for Local-First AI</h2>
+          <p class="blog-excerpt">Why shipping models to the edge isn't just a performance play — it's a privacy imperative and an architectural inevitability.</p>
         </div>
-        <h2 class="blog-title">The Case for Local-First AI</h2>
+        <span class="blog-arrow" aria-hidden="true">→</span>
       </a>
 
-      <a href="#" class="blog-entry">
-        <div class="blog-entry-meta">
-          <span class="blog-date">Dec 2025</span>
-          <span class="blog-tag">Career</span>
+      <a href="#" class="blog-entry" data-article="first-production-app" id="entry-first-production-app">
+        <div class="blog-entry-inner">
+          <div class="blog-entry-meta">
+            <span class="blog-date">Dec 2025</span>
+            <span class="blog-tag">Career</span>
+          </div>
+          <h2 class="blog-title">Lessons from Shipping My First Production App</h2>
+          <p class="blog-excerpt">What textbooks don't teach you about deployment, user feedback loops, and the art of letting go of perfect code.</p>
         </div>
-        <h2 class="blog-title">Lessons from Shipping My First Production App</h2>
+        <span class="blog-arrow" aria-hidden="true">→</span>
       </a>
 
     </div>
+
+    <!-- ===== Single Article View (hidden by default) ===== -->
+    <div class="article-view" id="article-view" style="display: none;">
+      <div class="article-view-inner fade-in">
+        <a href="#" class="article-back-link" id="article-back-link">← Back to Articles</a>
+        <div class="article-header">
+          <div class="article-meta">
+            <span class="article-date" id="article-date"></span>
+            <span class="article-tag-single" id="article-tag"></span>
+          </div>
+          <h1 class="article-title" id="article-title"></h1>
+        </div>
+        <div class="article-body" id="article-body"></div>
+      </div>
+    </div>
+
   </main>
 
   <footer class="site-footer">
