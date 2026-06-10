@@ -12,7 +12,22 @@
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="loading">
+
+  <!-- ===== Loading Screen ===== -->
+  <div class="loader-overlay" id="loader-overlay" aria-hidden="true">
+    <div class="loader-corner loader-corner--tl"></div>
+    <div class="loader-corner loader-corner--tr"></div>
+    <div class="loader-corner loader-corner--bl"></div>
+    <div class="loader-corner loader-corner--br"></div>
+    <div class="loader-word-container">
+      <span class="loader-word" data-text=""></span>
+    </div>
+    <p class="loader-subtext">Initializing Portfolio</p>
+    <div class="loader-progress-track">
+      <div class="loader-progress-bar"></div>
+    </div>
+  </div>
 
   <!-- ===== Navigation ===== -->
   <nav class="site-nav" aria-label="Main navigation">

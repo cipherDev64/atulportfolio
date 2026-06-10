@@ -3,6 +3,90 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   // ──────────────────────────────────────────────
+  // 0. Futuristic Loading Screen
+  // ──────────────────────────────────────────────
+
+  /**
+   * Cycles through identity words with glitch effects, a progress
+   * bar, and a dramatic wipe-reveal. Uses sessionStorage so the
+   * loader only plays on the first page load of a session.
+   */
+  const initLoader = () => {
+    const overlay = document.getElementById('loader-overlay');
+    if (!overlay) return;
+
+    // Skip loader if already seen this session
+    if (sessionStorage.getItem('loaderSeen')) {
+      overlay.remove();
+      document.body.classList.remove('loading');
+      return;
+    }
+
+    document.body.classList.add('loading');
+
+    const wordEl      = overlay.querySelector('.loader-word');
+    const progressBar = overlay.querySelector('.loader-progress-bar');
+    const words       = ['Innovator', 'Gamer', 'Designer', 'Techie', 'Builder', 'Dreamer'];
+    let currentIndex  = 0;
+
+    const showWord = (index) => {
+      const word = words[index];
+      wordEl.classList.remove('active');
+      wordEl.textContent = '';
+
+      // Brief pause for the "out" transition
+      setTimeout(() => {
+        wordEl.textContent = word;
+        wordEl.setAttribute('data-text', word);
+        wordEl.classList.add('active');
+      }, 80);
+    };
+
+    // Show first word immediately
+    showWord(0);
+
+    // Cycle through remaining words
+    const wordInterval = setInterval(() => {
+      currentIndex++;
+      if (currentIndex >= words.length) {
+        clearInterval(wordInterval);
+        return;
+      }
+      showWord(currentIndex);
+      // Update progress bar
+      if (progressBar) {
+        const progress = ((currentIndex + 1) / words.length) * 100;
+        progressBar.style.width = progress + '%';
+      }
+    }, 500);
+
+    // Set initial progress
+    if (progressBar) {
+      progressBar.style.width = ((1) / words.length * 100) + '%';
+    }
+
+    // Total animation time: words.length * 500ms + 400ms buffer
+    const totalDuration = words.length * 500 + 400;
+
+    setTimeout(() => {
+      // Trigger exit animation
+      overlay.classList.add('loader-exit');
+      document.body.classList.remove('loading');
+      document.body.classList.add('loaded');
+
+      // Mark as seen for this session
+      sessionStorage.setItem('loaderSeen', 'true');
+
+      // Remove the overlay element after animation completes
+      setTimeout(() => {
+        overlay.remove();
+      }, 1200);
+    }, totalDuration);
+  };
+
+  initLoader();
+
+  // ──────────────────────────────────────────────
   // 1. Fade-in on Scroll (Intersection Observer)
   // ──────────────────────────────────────────────
 

@@ -1465,3 +1465,229 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 0.75rem;
   }
 }
+
+
+/* ============================================================
+   LOADING SCREEN
+   Futuristic intro loader with cycling identity words,
+   scanline overlay, glitch text, and wipe-to-reveal.
+   ============================================================ */
+
+/* ── Overlay ────────────────────────────────────────────────── */
+.loader-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+  background-image: radial-gradient(circle, #1A1A1A 1px, transparent 1px);
+  background-size: 24px 24px;
+  overflow: hidden;
+  transition: clip-path 0.8s cubic-bezier(0.77, 0, 0.175, 1),
+              opacity 0.4s 0.6s ease;
+}
+
+/* Scanline texture over the loader */
+.loader-overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(255, 255, 255, 0.015) 2px,
+    rgba(255, 255, 255, 0.015) 4px
+  );
+  pointer-events: none;
+  animation: loader-scanline-drift 8s linear infinite;
+}
+
+@keyframes loader-scanline-drift {
+  0%   { background-position: 0 0; }
+  100% { background-position: 0 200px; }
+}
+
+/* Subtle vignette */
+.loader-overlay::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, transparent 50%, rgba(0,0,0,0.6) 100%);
+  pointer-events: none;
+}
+
+/* ── Word Display ──────────────────────────────────────────── */
+.loader-word-container {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  min-height: 100px;
+}
+
+.loader-word {
+  font-family: var(--font);
+  font-size: clamp(2.5rem, 8vw, 6rem);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--white);
+  opacity: 0;
+  transform: translateY(20px) scale(0.95);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+  position: relative;
+}
+
+.loader-word.active {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Glitch flicker on the active word */
+.loader-word.active::before,
+.loader-word.active::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.loader-word.active::before {
+  color: var(--accent);
+  animation: loader-glitch-top 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s 1;
+  clip-path: inset(0 0 60% 0);
+}
+
+.loader-word.active::after {
+  color: #FF003C;
+  animation: loader-glitch-bottom 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s 1;
+  clip-path: inset(60% 0 0 0);
+}
+
+@keyframes loader-glitch-top {
+  0%   { transform: translate(-3px, -2px); opacity: 0.8; }
+  20%  { transform: translate(3px, 1px); }
+  40%  { transform: translate(-1px, -1px); }
+  60%  { transform: translate(2px, 0); }
+  80%  { transform: translate(-1px, 1px); }
+  100% { transform: translate(0, 0); opacity: 0; }
+}
+
+@keyframes loader-glitch-bottom {
+  0%   { transform: translate(3px, 2px); opacity: 0.8; }
+  20%  { transform: translate(-3px, -1px); }
+  40%  { transform: translate(1px, 1px); }
+  60%  { transform: translate(-2px, 0); }
+  80%  { transform: translate(1px, -1px); }
+  100% { transform: translate(0, 0); opacity: 0; }
+}
+
+/* ── Subtext (below the word) ──────────────────────────────── */
+.loader-subtext {
+  position: relative;
+  z-index: 2;
+  margin-top: 20px;
+  font-family: var(--font);
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--muted);
+  opacity: 0;
+  animation: loader-subtext-in 0.6s 0.3s ease forwards;
+}
+
+@keyframes loader-subtext-in {
+  to { opacity: 1; }
+}
+
+/* ── Progress Bar ──────────────────────────────────────────── */
+.loader-progress-track {
+  position: absolute;
+  bottom: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(300px, 60vw);
+  height: 2px;
+  background: var(--border);
+  border-radius: 2px;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.loader-progress-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--accent), #00D4FF);
+  border-radius: 2px;
+  transition: width 0.3s ease;
+  box-shadow: 0 0 12px rgba(0, 163, 255, 0.4);
+}
+
+/* ── Corner Decorators ─────────────────────────────────────── */
+.loader-corner {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  z-index: 2;
+  opacity: 0.2;
+}
+
+.loader-corner--tl { top: 24px; left: 24px; border-top: 1px solid var(--accent); border-left: 1px solid var(--accent); }
+.loader-corner--tr { top: 24px; right: 24px; border-top: 1px solid var(--accent); border-right: 1px solid var(--accent); }
+.loader-corner--bl { bottom: 24px; left: 24px; border-bottom: 1px solid var(--accent); border-left: 1px solid var(--accent); }
+.loader-corner--br { bottom: 24px; right: 24px; border-bottom: 1px solid var(--accent); border-right: 1px solid var(--accent); }
+
+/* ── Exit Animation ────────────────────────────────────────── */
+.loader-overlay.loader-exit {
+  clip-path: inset(0 0 100% 0);
+  opacity: 0;
+}
+
+/* While loader is active, hide the page content */
+body.loading {
+  overflow: hidden;
+}
+
+body.loading > *:not(.loader-overlay) {
+  opacity: 0;
+}
+
+/* Reveal the page content after loader exits */
+body.loaded > *:not(.loader-overlay) {
+  animation: loader-page-reveal 0.6s ease forwards;
+}
+
+@keyframes loader-page-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Reduced Motion ────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .loader-word.active::before,
+  .loader-word.active::after {
+    animation: none;
+  }
+
+  .loader-overlay {
+    transition: opacity 0.3s ease;
+  }
+
+  .loader-overlay.loader-exit {
+    clip-path: none;
+    opacity: 0;
+  }
+}
