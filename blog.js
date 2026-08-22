@@ -24,10 +24,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.body.classList.add('loading');
 
-    const wordEl      = overlay.querySelector('.loader-word');
+    const wordEl = overlay.querySelector('.loader-word');
     const progressBar = overlay.querySelector('.loader-progress-bar');
-    const words       = ['Innovator', 'Gamer', 'Designer', 'Techie', 'Builder', 'Dreamer'];
-    let currentIndex  = 0;
+    const words = ['Innovator', 'Gamer', 'Designer', 'Techie', 'Builder', 'Dreamer'];
+    let currentIndex = 0;
 
     const showWord = (index) => {
       const word = words[index];
@@ -156,7 +156,7 @@ document.addEventListener('DOMContentLoaded', () => {
       link.classList.remove('active');
 
       if (linkPage === currentPage) {
-        link.classList.add('active');
+        link.classList.add('inactive');
       }
     });
   };
@@ -287,7 +287,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!items.length) return;
 
     items.forEach((item, index) => {
-      item.style.animationDelay  = `${index * 0.1}s`;
+      item.style.animationDelay = `${index * 0.1}s`;
       item.style.transitionDelay = `${index * 0.1}s`;
     });
   };
@@ -303,7 +303,7 @@ document.addEventListener('DOMContentLoaded', () => {
    * slide/fade the menu in and out.
    */
   const initMobileNav = () => {
-    const nav      = document.querySelector('.site-nav');
+    const nav = document.querySelector('.site-nav');
     const navInner = document.querySelector('.nav-inner');
     const navLinks = document.querySelector('.nav-links');
     if (!nav || !navInner || !navLinks) return;
@@ -362,7 +362,7 @@ document.addEventListener('DOMContentLoaded', () => {
    * Full article content database. Each entry maps to a
    * `data-article` slug on the blog index cards.
    */
-  const articleData = {
+  const articleData = window.articleData = {
     'agentic-workflows': {
       title: 'Why Agentic Workflows Will Replace Traditional Automation',
       date: 'May 2026',
@@ -565,17 +565,17 @@ Local Metal: ~12ms avg  (p99: 22ms)</code></pre>
    * - Hash-based routing for direct article links
    */
   const initBlogArticles = () => {
-    const indexView   = document.getElementById('blog-index-view');
+    const indexView = document.getElementById('blog-index-view');
     const articleView = document.getElementById('article-view');
-    const backLink    = document.getElementById('article-back-link');
+    const backLink = document.getElementById('article-back-link');
 
     // Only run on the blog page
     if (!indexView || !articleView) return;
 
     const titleEl = document.getElementById('article-title');
-    const dateEl  = document.getElementById('article-date');
-    const tagEl   = document.getElementById('article-tag');
-    const bodyEl  = document.getElementById('article-body');
+    const dateEl = document.getElementById('article-date');
+    const tagEl = document.getElementById('article-tag');
+    const bodyEl = document.getElementById('article-body');
 
     /**
      * Show a specific article by slug.
@@ -585,11 +585,11 @@ Local Metal: ~12ms avg  (p99: 22ms)</code></pre>
       if (!data) return;
 
       titleEl.textContent = data.title;
-      dateEl.textContent  = data.date;
-      tagEl.textContent   = data.tag;
-      bodyEl.innerHTML    = data.body;
+      dateEl.textContent = data.date;
+      tagEl.textContent = data.tag;
+      bodyEl.innerHTML = data.body;
 
-      indexView.style.display   = 'none';
+      indexView.style.display = 'none';
       articleView.style.display = 'block';
 
       // Re-trigger the fade-in animation
@@ -609,7 +609,7 @@ Local Metal: ~12ms avg  (p99: 22ms)</code></pre>
      */
     const showIndex = () => {
       articleView.style.display = 'none';
-      indexView.style.display   = 'block';
+      indexView.style.display = 'block';
       history.pushState(null, '', 'blog.html');
       window.scrollTo({ top: 0, behavior: 'smooth' });
     };

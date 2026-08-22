@@ -1,196 +1,127 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="color-scheme" content="dark">
-  <meta name="description" content="Portfolio of a software engineer obsessed with great engineering, design, and AI">
-  <meta name="view-transition" content="same-origin">
-  <title>Home — Portfolio</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body class="loading">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Atulya Manikandan — UI/UX designer and AI builder." />
+    <title>Atulya Manikandan — Interface, Intelligence, Impact</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="grain"></div>
+    <header class="topbar">
+      <a class="wordmark" href="#top">AM<span>®</span></a>
+      <nav aria-label="Primary navigation"><a href="#work">WORK</a><a href="#captures">CAPTURES</a><a href="#journal">JOURNAL</a><a href="#deck">DECK</a></nav>
+      <div class="topbar-actions"><button class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">◐ <span>LIGHTS OFF</span></button><a class="lets-talk" href="mailto:atulyamanikandan@gmail.com">LET'S TALK ↗</a></div>
+    </header>
 
-  <!-- ===== Loading Screen ===== -->
-  <div class="loader-overlay" id="loader-overlay" aria-hidden="true">
-    <div class="loader-corner loader-corner--tl"></div>
-    <div class="loader-corner loader-corner--tr"></div>
-    <div class="loader-corner loader-corner--bl"></div>
-    <div class="loader-corner loader-corner--br"></div>
-    <div class="loader-word-container">
-      <span class="loader-word" data-text=""></span>
-    </div>
-    <p class="loader-subtext">Initializing Portfolio</p>
-    <div class="loader-progress-track">
-      <div class="loader-progress-bar"></div>
-    </div>
-  </div>
-
-  <!-- ===== Navigation ===== -->
-  <nav class="site-nav" aria-label="Main navigation">
-    <div class="nav-inner">
-      <a href="index.html" class="nav-brand">Atulya Manikandan</a>
-      <div class="nav-links">
-        <a href="index.html" class="active" aria-current="page">Home</a>
-        <a href="projects.html">Projects</a>
-        <a href="blog.html">Blog</a>
-        <a href="captures.html">Captures</a>
-        <a href="deck.html">Deck</a>
-      </div>
-    </div>
-  </nav>
-
-  <!-- ===== Main Content ===== -->
-  <main class="page-container">
-    <div class="bento-grid home-grid">
-
-      <!-- Container 1 — Intro -->
-      <section class="bento-box span-2 fade-in" id="intro" aria-label="Introduction">
-        <div class="intro-content">
-          <div class="intro-text">
-            <p class="greeting">Hi, I'm</p>
-            <h1 class="intro-name">Atulya Manikandan</h1>
-            <p class="intro-bio">Obsessed with great engineering, design, and building the future of AI. When I'm not coding, I'm working on side projects or exploring tech.</p>
+    <main id="top">
+      <section class="hero panel">
+        <div class="hero-copy">
+          <span class="eyebrow">01 / HELLO, INTERNET</span>
+          <h1>I MAKE<br /><em>DIGITAL</em><br />THINGS <span>POP.</span></h1>
+          <p class="intro">I’m Atulya — a UI/UX-minded designer and AI builder turning complicated ideas into interfaces people actually want to touch.</p>
+          <div class="hero-actions">
+            <a class="button button-blue" href="#work">SEE THE WORK <b>↓</b></a>
+            <a class="text-link" href="#about">MORE ABOUT ME →</a>
           </div>
-          <div class="intro-avatar">
-            <img src="images/avatar.jpg" alt="Atulya Manikandan">
-          </div>
+        </div>
+        <div class="portrait-wrap">
+          <span class="stamp stamp-red">DESIGNED<br />TO PROVOKE</span>
+          <span class="scribble">!!!</span>
+          <img src="assets/atulya-portrait.jpeg" alt="Portrait of Atulya Manikandan" />
+          <span class="portrait-caption">ATULYA / 2026</span>
+        </div>
+        <div class="hero-foot"><span>SCROLL FOR A GOOD TIME</span><span>↓</span><span>BASED IN BENGALURU, INDIA</span></div>
+      </section>
+
+      <section class="ticker" aria-label="Capabilities"><div>USER EXPERIENCE ✦ INTERACTION DESIGN ✦ AI EXPERIENCES ✦ CREATIVE CODE ✦ PRODUCT THINKING ✦ USER EXPERIENCE ✦ INTERACTION DESIGN ✦ AI EXPERIENCES ✦ CREATIVE CODE ✦ PRODUCT THINKING ✦</div></section>
+
+      <section class="about grid-section" id="about">
+        <div class="section-label"><span>02</span><span>THE SHORT VERSION</span></div>
+        <div class="about-main">
+          <h2>Not here to make things <em>pretty.</em><br />Here to make them <mark>click.</mark></h2>
+          <p>I design systems with personality: clear flows, sharp visual hierarchy, and just enough weirdness to make an experience memorable. AI is my favourite material; UX is the point.</p>
+        </div>
+        <div class="stats">
+          <div><strong>UX</strong><span>before the pixels</span></div>
+          <div><strong>AI</strong><span>with a human pulse</span></div>
+          <div><strong>∞</strong><span>curiosity on tap</span></div>
         </div>
       </section>
 
-      <!-- Container 2 — Timeline -->
-      <section class="bento-box fade-in" id="experience" aria-label="Experience timeline">
-        <h3>Experience</h3>
-        <div class="timeline">
-
-          <div class="timeline-entry">
-            <div class="timeline-dot" aria-hidden="true"></div>
-            <div class="timeline-content">
-              <span class="timeline-date">Sep 2025 – Sep 2026</span>
-              <div class="timeline-title">Board Member, Evolve AI Club</div>
-            </div>
-          </div>
-
-          <div class="timeline-entry">
-            <div class="timeline-dot" aria-hidden="true"></div>
-            <div class="timeline-content">
-              <span class="timeline-date">2025</span>
-              <div class="timeline-title">IEEE Member</div>
-            </div>
-          </div>
-
+      <section class="work" id="work">
+        <div class="section-head"><div class="section-label"><span>03</span><span>SELECTED EXPERIMENTS</span></div><h2>Big ideas.<br /><em>Zero beige.</em></h2><p>Interfaces, intelligent systems, and an unreasonable amount of curiosity.</p></div>
+        <div class="projects-grid">
+          <a class="project project-yellow feature" href="#project-details"><span class="project-no">01 / AI SYSTEM</span><div class="window"><span></span><span></span><span></span><code>agent.run()<br />↳ thinking...</code></div><h3>AetherOS<br />Agentic Core</h3><p>An autonomous agent executor with high-speed LLM routing — reimagined as a controllable product experience.</p><b>VIEW CASE STUDY ↗</b></a>
+          <a class="project project-blue" href="#project-details"><span class="project-no">02 / RESEARCH × PRODUCT</span><div class="orbit">◎<i>?</i></div><h3>Hyperbolic<br />Reasoning</h3><p>Complex knowledge graphs, spatialized for extreme-accuracy reasoning.</p><b>EXPLORE ↗</b></a>
+          <a class="project project-white" href="#project-details"><span class="project-no">03 / COMPUTER VISION</span><div class="eye">◉</div><h3>NexusVision</h3><p>Edge analytics that helps computers see the bigger picture.</p><b>VIEW PROJECT ↗</b></a>
+          <a class="project project-red" href="#project-details"><span class="project-no">04 / PREDICTIVE ANALYTICS</span><div class="chart">↗<small>+ RETENTION</small></div><h3>Momentum<br />Analytics</h3><p>Time-series forecasting shaped around the people behind the data.</p><b>VIEW PROJECT ↗</b></a>
         </div>
       </section>
 
-      <!-- Container 3 — Status -->
-      <section class="bento-box fade-in" id="status" aria-label="Current status">
-        <div class="status-widget">
-          <span class="pulse-dot" aria-hidden="true"></span>
-          <span class="status-text">Now: Building Agentic Workflows.</span>
-        </div>
-        <span class="status-label">Currently Active</span>
-      </section>
-
-      <!-- Container 4 — Captures Preview -->
-      <section class="bento-box span-2 fade-in" id="captures-preview" aria-label="Recent captures">
-        <h3>Recent Captures</h3>
-        <div class="carousel-container">
-          <div class="carousel-track">
-            <div class="carousel-item"><img src="images/capture-1.jpg" alt="Capture 1"></div>
-            <div class="carousel-item"><img src="images/capture-3.jpg" alt="Capture 3"></div>
-            <div class="carousel-item"><img src="images/capture-5.jpg" alt="Capture 5"></div>
-          </div>
-        </div>
-        <a href="captures.html" class="view-all-link">View all captures →</a>
-      </section>
-
-      <!-- Container 5 — Spotify -->
-      <section class="bento-box span-2 fade-in" id="spotify" aria-label="Recently played music">
-        <div class="spotify-section">
-          <div class="spotify-header"><span class="spotify-icon" aria-hidden="true">♫</span> Recently Played</div>
-          <div class="spotify-ticker" aria-label="Scrolling track list">
-            <div class="ticker-track">
-
-              <!-- Set 1 -->
-              <div class="ticker-item">
-                <div class="audio-bars" aria-hidden="true"><span></span><span></span><span></span></div>
-                <span class="track-name">Blinding Lights</span>
-                <span class="track-artist">The Weeknd</span>
-              </div>
-              <div class="ticker-item">
-                <div class="audio-bars" aria-hidden="true"><span></span><span></span><span></span></div>
-                <span class="track-name">Starboy</span>
-                <span class="track-artist">The Weeknd</span>
-              </div>
-              <div class="ticker-item">
-                <div class="audio-bars" aria-hidden="true"><span></span><span></span><span></span></div>
-                <span class="track-name">HUMBLE.</span>
-                <span class="track-artist">Kendrick Lamar</span>
-              </div>
-              <div class="ticker-item">
-                <div class="audio-bars" aria-hidden="true"><span></span><span></span><span></span></div>
-                <span class="track-name">Bohemian Rhapsody</span>
-                <span class="track-artist">Queen</span>
-              </div>
-              <div class="ticker-item">
-                <div class="audio-bars" aria-hidden="true"><span></span><span></span><span></span></div>
-                <span class="track-name">Lose Yourself</span>
-                <span class="track-artist">Eminem</span>
-              </div>
-              <div class="ticker-item">
-                <div class="audio-bars" aria-hidden="true"><span></span><span></span><span></span></div>
-                <span class="track-name">Levitating</span>
-                <span class="track-artist">Dua Lipa</span>
-              </div>
-
-              <!-- Set 2 (duplicate for seamless loop) -->
-              <div class="ticker-item">
-                <div class="audio-bars" aria-hidden="true"><span></span><span></span><span></span></div>
-                <span class="track-name">Blinding Lights</span>
-                <span class="track-artist">The Weeknd</span>
-              </div>
-              <div class="ticker-item">
-                <div class="audio-bars" aria-hidden="true"><span></span><span></span><span></span></div>
-                <span class="track-name">Starboy</span>
-                <span class="track-artist">The Weeknd</span>
-              </div>
-              <div class="ticker-item">
-                <div class="audio-bars" aria-hidden="true"><span></span><span></span><span></span></div>
-                <span class="track-name">HUMBLE.</span>
-                <span class="track-artist">Kendrick Lamar</span>
-              </div>
-              <div class="ticker-item">
-                <div class="audio-bars" aria-hidden="true"><span></span><span></span><span></span></div>
-                <span class="track-name">Bohemian Rhapsody</span>
-                <span class="track-artist">Queen</span>
-              </div>
-              <div class="ticker-item">
-                <div class="audio-bars" aria-hidden="true"><span></span><span></span><span></span></div>
-                <span class="track-name">Lose Yourself</span>
-                <span class="track-artist">Eminem</span>
-              </div>
-              <div class="ticker-item">
-                <div class="audio-bars" aria-hidden="true"><span></span><span></span><span></span></div>
-                <span class="track-name">Levitating</span>
-                <span class="track-artist">Dua Lipa</span>
-              </div>
-
-            </div>
-          </div>
+      <section class="project-details" id="project-details">
+        <div class="section-label"><span>03.1</span><span>THE FULL PROJECT INDEX</span></div>
+        <div class="detail-grid">
+          <article><b>01 / AETHEROS</b><h3>Agentic Core</h3><p>High-throughput autonomous agent executor built around low-latency LLM routing.</p><span>PYTHON · GROQ API · PYTORCH · NEXT.JS · REDIS</span></article>
+          <article><b>02 / HYPERBOLIC</b><h3>Manifold Reasoning</h3><p>Hierarchical knowledge graphs embedded into Poincaré disk spaces for zero-shot reasoning.</p><span>PYTHON · PYTORCH GEOMETRIC · FASTAPI</span></article>
+          <article><b>03 / NEXUSVISION</b><h3>Edge Analytics</h3><p>Low-power spatial intelligence and multi-object tracking designed for edge hardware.</p><span>C++ · OPENCV · TENSORRT · MQTT</span></article>
+          <article><b>04 / MOMENTUM</b><h3>Analytics Core</h3><p>Behavioral cohort analysis and forecasting to make retention patterns visible.</p><span>PYTHON · PANDAS · SCIKIT-LEARN · KAFKA</span></article>
         </div>
       </section>
 
-    </div>
-  </main>
+      <section class="captures panel" id="captures">
+        <div class="section-label"><span>04</span><span>CAPTURES / OFF SCREEN</span></div>
+        <div class="captures-head"><h2>Life through<br />my <em>lens.</em></h2><a class="button button-red" href="#captures">ALL CAPTURES ↓</a></div>
+        <div class="capture-grid">
+          <figure><img src="assets/capture-1.jpg" alt="Iced coffee at cafe" /><figcaption>01 / THE QUIET BETWEEN SIPS</figcaption></figure>
+          <figure><img src="assets/capture-3.jpg" alt="Golden hour field" /><figcaption>02 / LAST LIGHT</figcaption></figure>
+          <figure><img src="assets/capture-5.jpg" alt="Motorcycles at sunset" /><figcaption>03 / NO DESTINATION</figcaption></figure>
+          <figure><img src="assets/capture-2.jpg" alt="Night cityscape" /><figcaption>04 / CITIES LOWER THEIR VOICE</figcaption></figure>
+          <figure><img src="assets/capture-4.jpg" alt="Cricket nets" /><figcaption>05 / EVERY CENTER HAS A PURPOSE</figcaption></figure>
+        </div>
+      </section>
 
-  <!-- ===== Footer ===== -->
-  <footer class="site-footer">
-    <p>Made with <span class="heart" aria-label="love">♥</span> in Bengaluru. Built on Antigravity.</p>
-  </footer>
+      <section class="journal" id="journal">
+        <div class="section-label"><span>05</span><span>WORDS, WIRES &amp; WHATNOT</span></div>
+        <div class="journal-title"><h2>Brain<br /><em>dump.</em></h2><a href="#journal">SIX STORIES, ONE BRAIN ↓</a></div>
+        <a class="post" href="posts/agentic-workflows.html"><span>AI / MAY 2026</span><h3>Why Agentic Workflows Will Replace Traditional Automation</h3><b>↗</b></a>
+        <a class="post" href="posts/design-system.html"><span>DESIGN / APR 2026</span><h3>Building a Design System From Scratch</h3><b>↗</b></a>
+        <a class="post post-more" href="posts/swiftui-uikit.html"><span>iOS / MAR 2026</span><h3>SwiftUI vs UIKit in 2026: The Verdict</h3><b>↗</b></a>
+        <a class="post post-more" href="posts/minimalism-arch.html"><span>ENGINEERING / FEB 2026</span><h3>On Minimalism in Software Architecture</h3><b>↗</b></a>
+        <a class="post post-more" href="posts/local-first-ai.html"><span>AI / JAN 2026</span><h3>The Case for Local-First AI</h3><b>↗</b></a>
+        <a class="post post-more" href="posts/first-production-app.html"><span>CAREER / DEC 2025</span><h3>Lessons from Shipping My First Production App</h3><b>↗</b></a>
+      </section>
 
-  <script src="js/main.js"></script>
-</body>
+      <section class="content-callout panel" id="content" style="background:var(--red);padding:4.5vw 5vw;display:flex;align-items:end;justify-content:space-between;gap:32px">
+        <div><span class="eyebrow">06 / ALSO, I MAKE CONTENT</span><h2 style="font:clamp(42px,6vw,84px)/.9 var(--serif);letter-spacing:-.055em;margin:23px 0 15px">Design, AI &amp;<br /><em>the process in between.</em></h2><p style="max-width:420px;font-size:12px;line-height:1.6">I share the experiments, lessons, and behind-the-scenes moments that don’t fit into a case study.</p></div>
+        <a class="button button-red" href="https://instagram.com/justitsatul" target="_blank" rel="noreferrer">FOLLOW @JUSTITSATUL ↗</a>
+      </section>
+
+      <section class="deck panel" id="deck">
+        <div class="section-label"><span>07</span><span>THE TOOLS I LIVE IN</span></div>
+        <div class="deck-head"><h2>My little<br /><em>creative cockpit.</em></h2><p>The gear behind the pixels, builds, captures, and rabbit holes.</p></div>
+        <div class="deck-grid">
+          <article><img src="assets/iphone.png" alt="iPhone 17 Pro" /><span>SMARTPHONE</span><h3>iPhone 17 Pro</h3></article>
+          <article><img src="assets/macbook.png" alt="MacBook Air M2" /><span>LAPTOP</span><h3>MacBook Air M2</h3></article>
+          <article><img src="assets/monitor.png" alt="LG 4K Monitor" /><span>DISPLAY</span><h3>LG 24” 4K</h3></article>
+          <article><img src="assets/sony.png" alt="Sony headphones" /><span>AUDIO</span><h3>Sony WH-1000XM4</h3></article>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p>GOT A WEIRD,<br />WONDERFUL IDEA?</p>
+      <a class="giant-link" href="mailto:atulyamanikandan@gmail.com">LET'S MAKE<br />IT REAL <span>↗</span></a>
+      <div class="footer-bottom"><span>© 2026 ATULYA MANIKANDAN</span><span>MADE WITH INTENT + A LITTLE CHAOS</span><div class="socials"><a href="https://www.linkedin.com/in/atulya-manikandan-186bb0298/" target="_blank" rel="noreferrer">LINKEDIN ↗</a><a href="https://instagram.com/justitsatul" target="_blank" rel="noreferrer">INSTAGRAM ↗</a><a href="#top">HOME ↑</a></div></div>
+    </footer>
+    <script>
+      const toggle = document.querySelector('.theme-toggle');
+      const applyTheme = dark => { document.documentElement.dataset.theme = dark ? 'dark' : 'light'; toggle.setAttribute('aria-pressed', dark); toggle.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode'); toggle.innerHTML = dark ? '☼ <span>LIGHTS ON</span>' : '◐ <span>LIGHTS OFF</span>'; };
+      applyTheme(localStorage.getItem('portfolio-theme') === 'dark');
+      toggle.addEventListener('click', () => { const dark = document.documentElement.dataset.theme !== 'dark'; localStorage.setItem('portfolio-theme', dark ? 'dark' : 'light'); applyTheme(dark); });
+    </script>
+  </body>
 </html>
